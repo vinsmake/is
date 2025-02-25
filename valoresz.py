@@ -33,13 +33,13 @@ if opcion == "1":
 	n = solicitar_entero("Ingrese la cantidad de valores (entre 4 y 15): ", 4, 15)
 
 	for i in range(n):
-		valor = solicitar_entero(f"Ingrese el valor {i+1} (entre 5 y 100): ", 5, 100)
+		valor = solicitar_entero(f"Ingrese el valor {i+1} (entre 5 y 300): ", 5, 300)
 		valores.append(valor)
 
 # Modo 2: Ingresar valores uno a uno hasta alcanzar entre 4 y 15 valores
 else:
 	while len(valores) < 15:
-		valor = solicitar_entero(f"Ingrese el valor {len(valores)+1} (entre 5 y 100): ", 5, 100)
+		valor = solicitar_entero(f"Ingrese el valor {len(valores)+1} (entre 5 y 300): ", 5, 300)
 		valores.append(valor)
 
 		# Si ya tiene al menos 4 valores, preguntar si quiere continuar o detenerse
@@ -48,9 +48,16 @@ else:
 			if continuar != "sí" and continuar != "si":
 				break
 
-# Calcular la desviación estándar de los valores
+# Calcular la media y la desviación estándar de los valores
+media = statistics.mean(valores)
 desviacion_estandar = statistics.stdev(valores)
 
-# Imprimir los resultados
-print("\nValores ingresados:", valores)
-print(f"La desviación estándar de los valores es: {desviacion_estandar:.2f}")
+# Calcular y mostrar los valores Z
+print("\nValores ingresados y sus puntajes Z:")
+for valor in valores:
+	z = (valor - media) / desviacion_estandar
+	print(f"Valor: {valor} → Z: {z:.2f}")
+
+# Mostrar la media y la desviación estándar
+print(f"\nMedia de los valores: {media:.2f}")
+print(f"Desviación estándar de los valores: {desviacion_estandar:.2f}")
