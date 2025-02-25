@@ -56,8 +56,8 @@ desviacion_estandar = statistics.stdev(valores)
 print("\nValores ingresados y sus puntajes Z:")
 for valor in valores:
 	z = (valor - media) / desviacion_estandar
-	print(f"Valor: {valor} → Z: {z:.2f}")
+	print(f"Valor: {valor} → Z: {z:.3f}")
 
 # Mostrar la media y la desviación estándar
-print(f"\nMedia de los valores: {media:.2f}")
-print(f"Desviación estándar de los valores: {desviacion_estandar:.2f}")
+print(f"\nMedia de los valores: {media:.3f}")
+print(f"Desviación estándar de los valores: {desviacion_estandar:.3f}")
