@@ -69,4 +69,3 @@ syx = math.sqrt(suma_errores_cuadrados / (n - 2))
 print(f"\nSuma de errores al cuadrado: {suma_errores_cuadrados:.2f}")
 print(f"División: {suma_errores_cuadrados:.2f} / ({n} - 2) = {suma_errores_cuadrados / (n - 2):.2f}")
 print(f"Error estándar de estimación (Sy.x): {syx:.2f}")
-
